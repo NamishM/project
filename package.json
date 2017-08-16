@@ -1,0 +1,30 @@
+{
+  "name": "dbdoc-ui",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://srsdevwiki.srssoft.com/dbdoc",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10",
+    "react-router":"^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-headroom": "^2.1.6",
+    "react-syntax-highlighter": "^5.6.2",
+    "superagent":"^3.5.2",
+    "sql-formatter": "^2.0.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy:static": "copyfiles -u 2 \"./build/static/**/*.*\" ../static/",
+    "deploy:index":"",
+    "deploy:root":"copyfiles -u 1 \"./build/*.js*\" \"./build/*.ico\" ../",
+    "deploy":"npm run deploy:static && npm run deploy:root && npm run deploy:index"
+  }
+}
